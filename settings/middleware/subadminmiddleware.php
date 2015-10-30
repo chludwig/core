@@ -71,7 +71,10 @@ class SubadminMiddleware extends Middleware {
 	 * @return TemplateResponse
 	 */
 	public function afterException($controller, $methodName, \Exception $exception) {
-		$response = new TemplateResponse('core', '403', array(), 'guest');
+		$message = '';
+		if (\OC::$server->getConfig()->getSystemValue('debug', false)) {
+			$message = $exception->getMessage();
+		}
 		$response->setStatus(Http::STATUS_FORBIDDEN);
 		return $response;
 	}
