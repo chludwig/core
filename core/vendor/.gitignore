@@ -1,7 +1,7 @@
 test/
 src/
 bower.json
-.gitignore
+!.gitignore
 .jshintrc
 .travis.yml
 CHANGELOG*
@@ -36,7 +36,7 @@ moment/templates
 # jquery
 jquery/**
 !jquery/.bower.json
-!jquery/dist/jquery.*
+!jquery/jquery.*
 !jquery/MIT-LICENSE.txt
 
 # jquery-ui
@@ -125,7 +125,8 @@ backbone/backbone-min*
 
 # davclient.js
 davclient.js/**
-!davclient.js/lib
+!davclient\.js/lib
+!davclient\.js/lib/*
 !davclient.js/LICENSE
 
 # es6-promise
@@ -134,6 +135,7 @@ es6-promise/**
 !es6-promise/dist
 es6-promise/dist/*
 !es6-promise/dist/es6-promise.js
+
 
 # base64
 base64/*min.js
